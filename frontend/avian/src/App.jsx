@@ -31,10 +31,11 @@ export default function App() {
           fontSize: "32px", 
           fontWeight: "bold", 
           fontFamily: "Times New Roman, serif",
-          textAlign: "center"
+          textAlign: "center",
+          textTransform: "uppercase"
         }}
       >
-        Avian Flu Prediction
+        AVIAN FLU PREDICTION
       </h2>
       <input type="text" placeholder="Enter Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
       <input type="text" placeholder="Enter Longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
