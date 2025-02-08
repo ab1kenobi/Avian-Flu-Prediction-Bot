@@ -88,20 +88,35 @@ export default function Home() {
               color: 'black',                       
               }
             }}
-/>
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Longitude:
-          </Typography>
-          <TextField
+          />
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            textAlign: "center", 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold",                   
+            color: "black"                        
+          }}
+        >
+        Enter the Longitude:
+        </Typography>
+        <TextField
             variant="outlined"
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
             placeholder="Enter Longitude"
             fullWidth
+            sx={{
+              '& .MuiInputBase-input': {
+              fontFamily: 'Times New Roman, serif', 
+              fontWeight: 'bold',                   
+              color: 'black',                       
+              }
+            }}
           />
 
           <Typography variant="h4">Frontend</Typography>
-          <ResponsiveContainer gap={4}>
+          {/* <ResponsiveContainer gap={4}>
             <TechLogo logo={HTML5Logo} link="https://html.spec.whatwg.org/multipage/" hint="HTML5" />
             <TechLogo logo={CSS3Logo} link="https://www.w3.org/Style/CSS/Overview.en.html" hint="CSS3" />
             <TechLogo logo={JSLogo} link="https://www.javascript.com" hint="JavaScript" />
@@ -110,18 +125,8 @@ export default function Home() {
             <TechLogo logo={ViteLogo} link="https://vite.dev" hint="Vite" />
             <TechLogo logo={ReactLogo} link="https://react.dev" hint="React" />
             <TechLogo logo={MUILogo} link="https://mui.com/material-ui/" hint="MUI" />
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
 
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Average Temperature:
-          </Typography>
-          <TextField
-            variant="outlined"
-            value={temperature}
-            onChange={(e) => setTemperature(e.target.value)}
-            placeholder="Enter Temperature"
-            fullWidth
-          />
 
           <Typography variant="h4">Predictive Modeling of H5N1 Bird Flu in United
           States of America: A 2022-2023 Analysis Paper</Typography>
