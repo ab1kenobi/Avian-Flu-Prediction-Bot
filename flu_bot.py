@@ -19,7 +19,7 @@ print(merged_data.head())
 #based on all of these features that we train it on, it should determine the likelihood of an outbreak
 #step 1 is features
 merged_data['latitude'] = merged_data['lat']
-merged_data['longitude'] = merged_data['lon']
+merged_data['longitude'] = merged_data['lng']
 merged_data['avg_temp'] = merged_data['avg.temp']
 
 
