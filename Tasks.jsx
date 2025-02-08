@@ -49,6 +49,17 @@ export default function Tasks() {
             placeholder="Enter Longitude"
             fullWidth
           />
+
+          <Typography variant="body1" sx={{textAlign: "center"}}>
+            Enter the Average Temperature:
+          </Typography>
+          <TextField
+            variant="outlined"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+            placeholder="Enter Temperature"
+            fullWidth
+          />
         </Column>
       </Container>
     </>
