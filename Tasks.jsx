@@ -23,6 +23,25 @@ export default function Tasks() {
     <>
       <DemoAppBar/>
       <Outlet />
+      <Container sx={{ padding: 4 }}>
+        <Column gap={3}>
+          <Typography variant="h2">
+            Hello Farmers!
+          </Typography>
+    
+          <Typography variant="body1" sx={{textAlign: "center"}}>
+            Enter the Latitude:
+          </Typography>
+          <TextField
+            variant="outlined"
+            value={latitude}
+            onChange={(e) => setLatitude(e.target.value)}
+            placeholder="Enter Latitude"
+            fullWidth
+          />
+          
+        </Column>
+      </Container>
     </>
   );
 }
