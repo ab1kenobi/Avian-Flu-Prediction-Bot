@@ -4,7 +4,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, precision_score
 
 data1 = py.read_csv('avg_temp.csv')
-data2 = py.read_csv('h5n1_cdc.csv')
+data2 = py.read_csv('h5n1_cdc_clean.csv')
 
 print(data1.head())
 print(data2.head())
@@ -36,11 +36,11 @@ X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2, random_st
 clf = RandomForestClassifier(n_estimators=100, random_state=40)
 #fitting the model and training it 
 clf.fit(X_train, Y_train)
+# added code for prection accuracy also 
+Y_pred = clf.predict(X_test)  # Make predictions
 #this should print out the accuracy and precision of the testing data
-print("Accuracy: ", accuracy_score(Y_test))
-print(" ")
-print("Precision: ", precision_score(Y_test))
-
+print("Accuracy: ", accuracy_score(Y_test, Y_pred))
+print("Precision: ", precision_score(Y_test, Y_pred, average='weighted'))  # Handles multiclass cases
 
 
 
