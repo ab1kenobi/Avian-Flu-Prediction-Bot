@@ -33,7 +33,7 @@ export default function DemoAppBar() {
   const navigate = useNavigate();
 
   return (
-    <AppBar position="sticky" sx={{ background: "#092E20"}}>
+    <AppBar position="sticky" sx={{ backgroundColor: "rgb(207, 210, 215)"}}>
       <Toolbar>
         <Typography 
           variant="h5"
