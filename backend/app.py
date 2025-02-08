@@ -76,6 +76,7 @@ def getPredict():
     outbreak_chance = predict(latitude, longitude)
     recommendation = high_rec if outbreak_chance == "High" else low_rec
 
+
     return jsonify({
         'outbreak_chance': outbreak_chance,
         'recommendation': recommendation

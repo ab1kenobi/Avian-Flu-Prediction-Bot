@@ -5,11 +5,13 @@ export default function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
   const [prediction, setPrediction] = useState(null);
+  const [recommendation, setRecommendation] = useState(null);
   const [error, setError] = useState("");
 
   const getFluPrediction = async () => {
     setError("");
     setPrediction(null);
+    setRecommendation(null);
 
     try {
       const response = await axios.post("http://127.0.0.1:5000/predict", {
@@ -18,6 +20,7 @@ export default function App() {
       });
 
       setPrediction(response.data.outbreak_chance);
+      setRecommendation(response.data.recommendation);
     } catch (err) {
       setError("Error connecting to backend");
       console.error("Error connecting to backend:", err);
@@ -42,6 +45,7 @@ export default function App() {
       <input type="text" placeholder="Enter Longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
       <button onClick={getFluPrediction}>Get Prediction</button>
       {prediction && <h3>Outbreak Chance: {prediction}</h3>}
+      {recommendation && <h3>Recommendation: {recommendation}</h3>}
       {error && <p style={{ color: "red" }}>{error}</p>}
         <h3 
           style={{
