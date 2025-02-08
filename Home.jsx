@@ -53,8 +53,15 @@ export default function Home() {
         }}
       >
         <Column gap={3}>
-        <Typography variant="h2" sx={{ fontFamily: "Times New Roman, serif", fontWeight: "bold" }}>
-          Hello Farmers!
+        <Typography 
+          variant="h2" 
+          sx={{ 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold", 
+            color: "black"  // Make the text black
+          }}
+        >
+        Hello Farmers!
         </Typography>
     
           <Typography variant="body1" sx={{textAlign: "center"}}>
