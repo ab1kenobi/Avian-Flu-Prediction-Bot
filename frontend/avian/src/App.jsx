@@ -4,10 +4,28 @@ import axios from "axios";
 export default function App() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [userLocation, setUserLocation] = useState(""); 
   const [prediction, setPrediction] = useState(null);
   const [recommendation, setRecommendation] = useState(null);
   const [error, setError] = useState("");
 
+  const getCoord = async()=>{
+    setError("");
+    setPrediction(null);
+    try{
+      const response = await axios.get(`https://api.opencagedata.com/geocode/v1/json?q=${userLocation}&key=f80aec7fe2654a5eba029218ab99a269`)
+      if(response.data.results.length>0){
+        const {lat, lng} = response.data.results[0].geometry; 
+        setLatitude(lat);
+        setLongitude(lng);
+      }else{
+        setError("Location not found");
+      }
+    } catch(err){
+      setError("Error fetching location coordinates");
+      console.error("Error fetching coordinates", err); 
+    }
+  };
   const getFluPrediction = async () => {
     setError("");
     setPrediction(null);
@@ -44,6 +62,19 @@ export default function App() {
       <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", marginTop: "20px" }}>
         <input 
           type="text" 
+          placeholder="Enter Location (City or Address)" 
+          value={userLocation} // Changed to userLocation
+          onChange={(e) => setUserLocation(e.target.value)} // Changed to userLocation
+          style={{ padding: "10px", fontSize: "18px", width: "300px", textAlign: "center", borderRadius: "5px", border: "1px solid #ccc" }}
+        />
+        <button 
+          onClick={getCoord} 
+          style={{ padding: "10px 20px", fontSize: "18px", cursor: "pointer", borderRadius: "5px", backgroundColor: "#007BFF", color: "white", border: "none" }}
+        >
+          Get Coordinates
+        </button>
+        <input 
+          type="text" 
           placeholder="Enter Latitude" 
           value={latitude} 
           onChange={(e) => setLatitude(e.target.value)} 
@@ -58,9 +89,10 @@ export default function App() {
         />
         <button 
           onClick={getFluPrediction} 
-          style={{ padding: "10px 20px", fontSize: "18px", cursor: "pointer", borderRadius: "5px", backgroundColor: "#007BFF", color: "white", border: "none" }}
+          style={{ padding: "10px 20px", fontSize: "18px", cursor: "pointer", borderRadius: "5px", backgroundColor: "#28a745", color: "white", border: "none" }}
         >
-          Get Prediction
+
+        Get Prediction
         </button>
       </div>
       {prediction && <h3>Outbreak Chance: {prediction}</h3>}
