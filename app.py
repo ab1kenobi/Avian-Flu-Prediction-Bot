@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 import joblib
 
+
+#set up app
+app = Flask(__name__)
+
 # Read the datasets
 data1 = pd.read_csv('avg_temp.csv')
 data2 = pd.read_csv('final.csv')
@@ -61,13 +65,33 @@ high_rec = """please follow these steps immediatly:
 
 3. **Protect Your Family:** Minimize direct contact with sick or dead birds, wash hands frequently, and monitor for flu-like symptoms in family members."""
 
-# Get the outbreak prediction
-outbreak_chance = predict(latitude, longitude)
-if outbreak_chance == "High":
-    print(f"The likelihood of an outbreak at lat: {latitude}, lon: {longitude} is High.")
-    print("\n")
-    print(high_rec)
-else:
-    print(f"The likelihood of an outbreak at lat: {latitude}, lon: {longitude} is Low.")
-    print("\n")
-    print(low_rec)
+@app.route('/predict', methods =['POST'])
+def getPredict():
+    data = request.get_json()
+    latitude = data['latitude']
+    longitude = data['longitude']
+    temperature = data['temperature']
+    # Get the outbreak prediction
+    outbreak_chance = predict(latitude, longitude)
+    recommendation = high_rec if outbreak_chance == "High" else low_rec
+
+    return jsonify({
+        'outbreak_chance' : outbreak_chance,
+        'recommendation' : recommendation
+    })
+if __name__ == '__main__':
+    app.run(debug=True)
+
+
+    
+    '''
+    if outbreak_chance == "High":
+        print(f"The likelihood of an outbreak at lat: {latitude}, lon: {longitude} is High.")
+        print("\n")
+        print(high_rec)
+    else:
+        print(f"The likelihood of an outbreak at lat: {latitude}, lon: {longitude} is Low.")
+        print("\n")
+        print(low_rec)
+    '''
+    
