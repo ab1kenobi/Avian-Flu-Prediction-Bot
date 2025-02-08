@@ -22,6 +22,14 @@ merged_data['latitude'] = merged_data['lat']
 merged_data['longitude'] = merged_data['lng']
 merged_data['avg_temp'] = merged_data['avg.temp']
 
+#relevant features
+features = ['latitude', 'longitude', 'avg_temp']
+X = merged_data[features]
+Y = merged_data['cases']
+
+#we now have to split the data set into training and testing data
+#usually we use an 80 20 split which is what I believe we should do 
+
 
 
 
