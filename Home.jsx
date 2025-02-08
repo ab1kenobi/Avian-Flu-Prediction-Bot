@@ -4,6 +4,7 @@ import { Column, DemoAppBar, ResponsiveContainer } from "@components";
 import { useState } from "react";
 import { TextField, Stack } from "@mui/material";
 
+
 import {
   HTML5Logo, CSS3Logo, JSLogo,
   NodeLogo, ViteLogo, ReactLogo, MUILogo,
@@ -43,7 +44,15 @@ export default function Home() {
   return (
     <>
       <DemoAppBar/>
-      <Container sx={{ padding: 4 }}>
+      <Container
+        sx={{
+          padding: 4,
+          backgroundImage: "url('/background.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh"
+        }}
+      >
         <Column gap={3}>
           <Typography variant="h2">
             Hello Farmers!
