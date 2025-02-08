@@ -45,6 +45,10 @@ export default function Home() {
           <Typography variant="h2">
             Hello Farmers!
           </Typography>
+    
+          <Typography variant="body1" sx={{textAlign: "center"}}>
+            Enter the Latitude:
+          </Typography>
           <TextField
             variant="outlined"
             value={latitude}
@@ -52,10 +56,6 @@ export default function Home() {
             placeholder="Enter Latitude"
             fullWidth
           />
-          {/* <TextField fullWidth variant="outlined" value={latitude} onChange={(e) => setLatitude(e.target.value)} placeholder="Enter Latitude"/> */}
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Latitude:
-          </Typography>
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Longitude:
           </Typography>
