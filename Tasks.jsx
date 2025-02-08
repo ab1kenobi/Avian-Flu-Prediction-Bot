@@ -23,31 +23,76 @@ export default function Tasks() {
     <>
       <DemoAppBar/>
       <Outlet />
-      <Container sx={{ padding: 4 }}>
+      <Container
+        sx={{
+          padding: 4,
+          backgroundColor: "rgb(242, 237, 237)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          minHeight: "100vh"
+        }}
+      >
         <Column gap={3}>
-          <Typography variant="h2">
-            Hello Farmers!
-          </Typography>
+        <Typography 
+          variant="h2" 
+          sx={{ 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold", 
+            color: "black"  
+          }}
+        >
+        Hello Farmers!
+        </Typography>
     
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Latitude:
-          </Typography>
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            textAlign: "center", 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold",                   
+            color: "black"                        
+          }}
+        >
+        Enter the Latitude:
+        </Typography>
           <TextField
             variant="outlined"
             value={latitude}
             onChange={(e) => setLatitude(e.target.value)}
             placeholder="Enter Latitude"
             fullWidth
+            sx={{
+              '& .MuiInputBase-input': {
+              fontFamily: 'Times New Roman, serif', 
+              fontWeight: 'bold',                   
+              color: 'black',                       
+              }
+            }}
           />
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Longitude:
-          </Typography>
-          <TextField
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            textAlign: "center", 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold",                   
+            color: "black"                        
+          }}
+        >
+        Enter the Longitude:
+        </Typography>
+        <TextField
             variant="outlined"
             value={longitude}
             onChange={(e) => setLongitude(e.target.value)}
             placeholder="Enter Longitude"
             fullWidth
+            sx={{
+              '& .MuiInputBase-input': {
+              fontFamily: 'Times New Roman, serif', 
+              fontWeight: 'bold',                   
+              color: 'black',                       
+              }
+            }}
           />
         </Column>
       </Container>
