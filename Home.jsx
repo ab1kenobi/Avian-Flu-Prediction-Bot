@@ -53,9 +53,9 @@ export default function Home() {
         }}
       >
         <Column gap={3}>
-          <Typography variant="h2">
-            Hello Farmers!
-          </Typography>
+        <Typography variant="h2" sx={{ fontFamily: "Times New Roman, serif", fontWeight: "bold" }}>
+          Hello Farmers!
+        </Typography>
     
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Latitude:
