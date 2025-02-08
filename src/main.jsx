@@ -1,18 +1,10 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { Home, Tasks, Display, Create, Edit } from "@pages";
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
 
-import "@styles/index.css";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <BrowserRouter>
-    <Routes>
-      <Route index element={<Home />} />
-      <Route path="tasks" element={<Tasks />}>
-        <Route index element={<Display />} />
-        <Route path="create" element={<Create />} />
-        <Route path="edit/:id" element={<Edit />} />
-      </Route>
-    </Routes>
-  </BrowserRouter>
-);
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
