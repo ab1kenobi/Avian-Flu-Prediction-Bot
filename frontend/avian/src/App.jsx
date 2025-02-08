@@ -37,11 +37,26 @@ export default function App() {
       >
         AVIAN FLU PREDICTION
       </h2>
+      
       <input type="text" placeholder="Enter Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
       <input type="text" placeholder="Enter Longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
       <button onClick={getFluPrediction}>Get Prediction</button>
       {prediction && <h3>Outbreak Chance: {prediction}</h3>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+      <p 
+        style={{
+          fontSize: "16px",
+          fontWeight: "normal",
+          fontFamily: "Times New Roman, serif",
+          color: "black",
+          textAlign: "justify",
+          maxWidth: "800px",
+          margin: "0 auto",
+          lineHeight: "1.5"
+        }}
+      >
+        The Avian flu, which is also known as the avian influenza, is essentially a viral infection that primarily affects birds but can sometimes also infect humans and other animals. The different factors that cause this virus are geographical location, temperature, and the outbreak type (poultry, non-poultry, wild bird). These viruses spread through direct contact with infected birds, their droppings, or contaminated surfaces, posing a significant risk to agriculture and public health. Due to this, there was a serious decline of egg production as the virus has killed many birds leading to the reduction of supply of eggs. This resulted in economic losses, shortages and price spikes in commercial poultry farms, and significant health issues of farmers.
+      </p>
     </div>
   );
 }
