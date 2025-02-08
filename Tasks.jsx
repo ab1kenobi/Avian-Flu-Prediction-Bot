@@ -39,7 +39,16 @@ export default function Tasks() {
             placeholder="Enter Latitude"
             fullWidth
           />
-          
+          <Typography variant="body1" sx={{textAlign: "center"}}>
+            Enter the Longitude:
+          </Typography>
+          <TextField
+            variant="outlined"
+            value={longitude}
+            onChange={(e) => setLongitude(e.target.value)}
+            placeholder="Enter Longitude"
+            fullWidth
+          />
         </Column>
       </Container>
     </>
