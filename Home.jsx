@@ -47,7 +47,7 @@ export default function Home() {
             Enter the Latitude:
           </Typography>
           <Typography variant="body1" sx={{textAlign: "center"}}>
-            The goal of this workshop is to integrate Django as the backend for a React-based TODO application. This will enable creating, editing, and deleting tasks with a persistent database, so changes remain even if the page is refreshed. Participants will learn the basics of models, views, and REST APIs, and how to connect it to a React frontend, and how to implement CRUD functionalaty with it. During the workshop, the participants will follow along to implemnt editing tasks which involves both GET and PUT requests (Read and Update from CRUD respectively). By the end of the session, attendees will hopefully have a fully functional TODO app and learn some Django.
+            Enter the Longitude:
           </Typography>
 
           <Typography variant="h4">Frontend</Typography>
@@ -62,7 +62,7 @@ export default function Home() {
             <TechLogo logo={MUILogo} link="https://mui.com/material-ui/" hint="MUI" />
           </ResponsiveContainer>
           <Typography variant="body1" sx={{textAlign: "center"}}>
-            For frontend, this demo project primarily uses React as well as utilizes a variety of components from the MUI (Material UI) library to simplify and speed up the development. Since React is a JavaScript-based web framework, HTML, CSS, and JavaScript are also extensively used throughout the project. Additionally, Vite was used to set up the project template while Node is handling the build process and rendering the frontend.
+            Enter the Average Temperature:
           </Typography>
 
           <Typography variant="h4">Predictive Modeling of H5N1 Bird Flu in United
