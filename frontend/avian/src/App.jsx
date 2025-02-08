@@ -25,8 +25,17 @@ export default function App() {
   };
 
   return (
-    <div>
-      <h2>Avian Flu Prediction</h2>
+    <div style={{ backgroundColor: "rgb(243, 239, 238)", minHeight: "100vh", padding: "20px" }}>
+      <h2 
+        style={{
+          fontSize: "32px", 
+          fontWeight: "bold", 
+          fontFamily: "Times New Roman, serif",
+          textAlign: "center"
+        }}
+      >
+        Avian Flu Prediction
+      </h2>
       <input type="text" placeholder="Enter Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
       <input type="text" placeholder="Enter Longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
       <button onClick={getFluPrediction}>Get Prediction</button>
