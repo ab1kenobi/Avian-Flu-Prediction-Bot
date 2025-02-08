@@ -95,10 +95,10 @@ export default function Home() {
 
           <Typography variant="h4">Predictive Modeling of H5N1 Bird Flu in United
           States of America: A 2022-2023 Analysis Paper</Typography>
-          <ResponsiveContainer gap={4}>
+          {/* <ResponsiveContainer gap={4}>
             <TechLogo logo={PythonLogo} link="https://www.python.org" hint="Python" />
             <TechLogo logo={DjangoLogo} link="https://www.djangoproject.com" hint="Django" />
-          </ResponsiveContainer>
+          </ResponsiveContainer> */}
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Thank you!
           </Typography>
