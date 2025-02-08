@@ -43,15 +43,24 @@ export default function App() {
       <button onClick={getFluPrediction}>Get Prediction</button>
       {prediction && <h3>Outbreak Chance: {prediction}</h3>}
       {error && <p style={{ color: "red" }}>{error}</p>}
+        <h3 
+          style={{
+            fontSize: "14px", 
+            fontWeight: "bold", 
+            fontFamily: "Times New Roman, serif",
+            color: "black",
+            textAlign: "center", 
+            marginBottom: "5px"
+          }}
+        >
+          Background Information
+        </h3>
       <p 
         style={{
-          fontSize: "16px",
+          fontSize: "14px",
           fontWeight: "normal",
           fontFamily: "Times New Roman, serif",
           color: "black",
-          textAlign: "justify",
-          maxWidth: "800px",
-          margin: "0 auto",
           lineHeight: "1.5"
         }}
       >
