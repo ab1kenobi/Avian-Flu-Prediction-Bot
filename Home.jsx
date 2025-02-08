@@ -3,7 +3,6 @@ import { Container, Tooltip, Typography } from "@mui/material";
 import { Column, DemoAppBar, ResponsiveContainer } from "@components";
 import { useState } from "react";
 import { TextField, Stack } from "@mui/material";
-import background from "@assets/background.jpg";
 
 import {
   HTML5Logo, CSS3Logo, JSLogo,
@@ -47,7 +46,7 @@ export default function Home() {
       <Container
         sx={{
           padding: 4,
-          backgroundImage: `url(${background})`,
+          backgroundColor: "rgb(242, 237, 237)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           minHeight: "100vh"
