@@ -44,7 +44,7 @@ export default function Home() {
           </Typography>
 
           <Typography variant="body1" sx={{textAlign: "center"}}>
-            Just a small demo project made by Kaito Sekiya for SparkHacks 2025 Tango with Django workshop. Adapted from the Django React Demo project for CS 351 Advanced Data Structures taught by Professor Shanon Reckinger.
+            Enter the Latitude:
           </Typography>
           <Typography variant="body1" sx={{textAlign: "center"}}>
             The goal of this workshop is to integrate Django as the backend for a React-based TODO application. This will enable creating, editing, and deleting tasks with a persistent database, so changes remain even if the page is refreshed. Participants will learn the basics of models, views, and REST APIs, and how to connect it to a React frontend, and how to implement CRUD functionalaty with it. During the workshop, the participants will follow along to implemnt editing tasks which involves both GET and PUT requests (Read and Update from CRUD respectively). By the end of the session, attendees will hopefully have a fully functional TODO app and learn some Django.
