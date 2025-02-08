@@ -58,22 +58,37 @@ export default function Home() {
           sx={{ 
             fontFamily: "Times New Roman, serif", 
             fontWeight: "bold", 
-            color: "black"  // Make the text black
+            color: "black"  
           }}
         >
         Hello Farmers!
         </Typography>
     
-          <Typography variant="body1" sx={{textAlign: "center"}}>
-            Enter the Latitude:
-          </Typography>
+        <Typography 
+          variant="body1" 
+          sx={{ 
+            textAlign: "center", 
+            fontFamily: "Times New Roman, serif", 
+            fontWeight: "bold",                   
+            color: "black"                        
+          }}
+        >
+        Enter the Latitude:
+        </Typography>
           <TextField
             variant="outlined"
             value={latitude}
             onChange={(e) => setLatitude(e.target.value)}
             placeholder="Enter Latitude"
             fullWidth
-          />
+            sx={{
+              '& .MuiInputBase-input': {
+              fontFamily: 'Times New Roman, serif', 
+              fontWeight: 'bold',                   
+              color: 'black',                       
+              }
+            }}
+/>
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Longitude:
           </Typography>
