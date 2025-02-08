@@ -1,6 +1,8 @@
 import PropTypes from "prop-types";
 import { Container, Tooltip, Typography } from "@mui/material";
 import { Column, DemoAppBar, ResponsiveContainer } from "@components";
+import { useState } from "react";
+import { TextField, Stack } from "@mui/material";
 
 import {
   HTML5Logo, CSS3Logo, JSLogo,
@@ -34,6 +36,7 @@ TechLogo.propTypes = {
 };
 
 export default function Home() {
+  const [latitude, setLatitude] = useState("");
   return (
     <>
       <DemoAppBar/>
@@ -42,7 +45,14 @@ export default function Home() {
           <Typography variant="h2">
             Hello Farmers!
           </Typography>
-
+          <TextField
+            variant="outlined"
+            value={latitude}
+            onChange={(e) => setLatitude(e.target.value)}
+            placeholder="Enter Latitude"
+            fullWidth
+          />
+          {/* <TextField fullWidth variant="outlined" value={latitude} onChange={(e) => setLatitude(e.target.value)} placeholder="Enter Latitude"/> */}
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Latitude:
           </Typography>
