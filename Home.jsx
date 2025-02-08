@@ -38,6 +38,8 @@ TechLogo.propTypes = {
 export default function Home() {
   const [latitude, setLatitude] = useState("");
   const [longitude, setLongitude] = useState("");
+  const [temperature, setTemperature] = useState("");
+
   return (
     <>
       <DemoAppBar/>
@@ -79,9 +81,17 @@ export default function Home() {
             <TechLogo logo={ReactLogo} link="https://react.dev" hint="React" />
             <TechLogo logo={MUILogo} link="https://mui.com/material-ui/" hint="MUI" />
           </ResponsiveContainer>
+
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Average Temperature:
           </Typography>
+          <TextField
+            variant="outlined"
+            value={temperature}
+            onChange={(e) => setTemperature(e.target.value)}
+            placeholder="Enter Temperature"
+            fullWidth
+          />
 
           <Typography variant="h4">Predictive Modeling of H5N1 Bird Flu in United
           States of America: A 2022-2023 Analysis Paper</Typography>
