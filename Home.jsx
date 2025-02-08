@@ -72,7 +72,7 @@ export default function Home() {
             <TechLogo logo={DjangoLogo} link="https://www.djangoproject.com" hint="Django" />
           </ResponsiveContainer>
           <Typography variant="body1" sx={{textAlign: "center"}}>
-            For backend, this demo project uses Django, a Python framework to build web applications.
+            Thank you!
           </Typography>
         </Column>
       </Container>
