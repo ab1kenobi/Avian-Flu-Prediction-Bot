@@ -41,9 +41,28 @@ export default function App() {
         AVIAN FLU PREDICTION
       </h2>
       
-      <input type="text" placeholder="Enter Latitude" value={latitude} onChange={(e) => setLatitude(e.target.value)} />
-      <input type="text" placeholder="Enter Longitude" value={longitude} onChange={(e) => setLongitude(e.target.value)} />
-      <button onClick={getFluPrediction}>Get Prediction</button>
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "10px", marginTop: "20px" }}>
+        <input 
+          type="text" 
+          placeholder="Enter Latitude" 
+          value={latitude} 
+          onChange={(e) => setLatitude(e.target.value)} 
+          style={{ padding: "10px", fontSize: "18px", width: "300px", textAlign: "center", borderRadius: "5px", border: "1px solid #ccc" }}
+        />
+        <input 
+          type="text" 
+          placeholder="Enter Longitude" 
+          value={longitude} 
+          onChange={(e) => setLongitude(e.target.value)} 
+          style={{ padding: "10px", fontSize: "18px", width: "300px", textAlign: "center", borderRadius: "5px", border: "1px solid #ccc" }}
+        />
+        <button 
+          onClick={getFluPrediction} 
+          style={{ padding: "10px 20px", fontSize: "18px", cursor: "pointer", borderRadius: "5px", backgroundColor: "#007BFF", color: "white", border: "none" }}
+        >
+          Get Prediction
+        </button>
+      </div>
       {prediction && <h3>Outbreak Chance: {prediction}</h3>}
       {recommendation && <h3>Recommendation: {recommendation}</h3>}
       {error && <p style={{ color: "red" }}>{error}</p>}
