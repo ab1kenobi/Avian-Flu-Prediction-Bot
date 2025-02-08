@@ -29,6 +29,17 @@ Y = merged_data['cases']
 
 #we now have to split the data set into training and testing data
 #usually we use an 80 20 split which is what I believe we should do 
+#we should add a random state to ensure that the results will be the same every time
+X_train, X_test, Y_train, Y_test = train_test_split(X,Y,test_size=0.2, random_state=40)
+
+#since we are predicting percentage, we should use a classifier instead of a regression model
+clf = RandomForestClassifier(n_estimators=100, random_state=40)
+#fitting the model and training it 
+clf.fit(X_train, Y_train)
+#this should print out the accuracy and precision of the testing data
+print("Accuracy: ", accuracy_score(Y_test))
+print(" ")
+print("Precision: ", precision_score(Y_test))
 
 
 
