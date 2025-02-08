@@ -37,6 +37,7 @@ TechLogo.propTypes = {
 
 export default function Home() {
   const [latitude, setLatitude] = useState("");
+  const [longitude, setLongitude] = useState("");
   return (
     <>
       <DemoAppBar/>
@@ -59,6 +60,13 @@ export default function Home() {
           <Typography variant="body1" sx={{textAlign: "center"}}>
             Enter the Longitude:
           </Typography>
+          <TextField
+            variant="outlined"
+            value={longitude}
+            onChange={(e) => setLongitude(e.target.value)}
+            placeholder="Enter Longitude"
+            fullWidth
+          />
 
           <Typography variant="h4">Frontend</Typography>
           <ResponsiveContainer gap={4}>
